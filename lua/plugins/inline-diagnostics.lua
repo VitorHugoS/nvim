@@ -1,0 +1,22 @@
+return {}
+--return {
+--  "rachartier/tiny-inline-diagnostic.nvim",
+--  event = "VeryLazy",
+--  priority = 1000,
+--  config = function()
+--    require("tiny-inline-diagnostic").setup({
+--      preset = "classic",
+--      transparent_bg = false,
+--      show_all_diags_on_cursorline = true,
+--      transparent_cursorline = false,
+--      options = {
+--        enable_on_insert = true,
+--        multilines = {
+--          enabled = true,
+--          always_show = false,
+--        }
+--      }
+--    })
+--    vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+--  end,
+--}
