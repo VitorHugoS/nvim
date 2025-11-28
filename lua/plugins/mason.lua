@@ -19,7 +19,8 @@ return {
         ts_ls = {},
         pylsp = {},
         eslint = {},
-        jdtls = {}
+        jdtls = {},
+        clojure_lsp = {}
       }
 
       -- mason setup
