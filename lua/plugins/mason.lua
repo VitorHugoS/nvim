@@ -17,6 +17,8 @@ return {
           },
         },
         ts_ls = {},
+        html = {},
+        jsonls = {},
         pylsp = {},
         eslint = {},
         jdtls = {}
