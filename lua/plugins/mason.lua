@@ -17,10 +17,18 @@ return {
           },
         },
         ts_ls = {},
+        html = {},
+        jsonls = {},
         pylsp = {},
         eslint = {},
         jdtls = {},
-        clojure_lsp = {}
+        clojure_lsp = {
+          init_options = {
+            ["additional-snippets"] = {},
+            ["document-formatting"] = true,
+            ["document-range-formatting"] = true,
+          },
+        }
       }
 
       -- mason setup
@@ -29,7 +37,11 @@ return {
         ensure_installed = vim.tbl_keys(servers),
       })
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-
+      capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      capabilities.textDocument.completion.completionItem.resolveSupport = {
+        properties = { "documentation", "detail", "additionalTextEdits" }
+      }
       for server, opts in pairs(servers) do
         opts.capabilities = capabilities
         vim.lsp.config(server, opts) -- configure the server
