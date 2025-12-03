@@ -7,7 +7,7 @@ return {
     keymap = { preset = 'default' },
 
     appearance = {
-      nerd_font_variant = 'mono'
+      nerd_font_variant = 'normal'
     },
 
     completion = {
@@ -33,13 +33,17 @@ return {
       menu = {
         draw = {
           treesitter = { "lsp" },
+          columns = {
+            { "label",     "label_description", gap = 1 },
+            { "kind" }
+          },
         },
       },
       documentation = {
         auto_show = true,
         auto_show_delay_ms = 0,
-        treesitter_highlighting = true,
       },
+      --ghost_text = { enabled = true },
 
     },
     sources = {
@@ -51,18 +55,22 @@ return {
         snippets = {
           enabled = true,
         },
+        lsp = {
+          min_keyword_length = 1,
+          score_offset = 100,
+        },
       },
 
     },
 
     signature = { enabled = true },
-    fuzzy = { implementation = "prefer_rust_with_warning",
-    frecency = {
-      enabled = true,
-    },
-
-    use_proximity = true,
-  }
-},
-opts_extend = { "sources.default" }
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      frecency = {
+        enabled = true,
+      },
+      use_proximity = true,
+    }
+  },
+  opts_extend = { "sources.default" }
 }
