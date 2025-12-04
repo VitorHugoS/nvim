@@ -20,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = ","
 vim.opt.compatible = false
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.cmd('colorscheme torte')
 vim.cmd('autocmd CompleteDone * pclose')
