@@ -61,8 +61,19 @@ return {
     vim.keymap.set({ "n", "v" }, "<leader>u", function() paredit.unwrap.unwrap_form_under_cursor() end,
       vim.tbl_extend("force", opts, { desc = "Paredit: Splice sexp/Unwrap" }))
 
-    -- Você pode adicionar seus comandos de movimento aqui se quiser
-    -- Exemplo: W para mover para a próxima cabeça de elemento
-    -- vim.keymap.set({ "n", "x", "o", "v" }, "W", function() paredit.api.move_to_next_element_head() end, opts)
+    vim.keymap.set({ "o", "v" }, "af", function() paredit.api.select_around_form() end,
+      { desc = "Paredit TextObj: Around form" })
+    vim.keymap.set({ "o", "v" }, "if", function() paredit.api.select_in_form() end, { desc = "Paredit TextObj: In form" })
+
+    vim.keymap.set({ "o", "v" }, "aF", function() paredit.api.select_around_top_level_form() end,
+      { desc = "Paredit TextObj: Around top-level form" })
+    vim.keymap.set({ "o", "v" }, "iF", function() paredit.api.select_in_top_level_form() end,
+      { desc = "Paredit TextObj: In top-level form" })
+
+    vim.keymap.set({ "o", "v" }, "ae", function() paredit.api.select_element() end,
+      { desc = "Paredit TextObj: Around element" })
+    -- Note: 'ie' e 'ae' usam a mesma função select_element, mas o modo 'i'/'a' indica o comportamento
+    vim.keymap.set({ "o", "v" }, "ie", function() paredit.api.select_element() end,
+      { desc = "Paredit TextObj: In element" })
   end,
 }
