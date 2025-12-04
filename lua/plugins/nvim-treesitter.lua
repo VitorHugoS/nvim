@@ -7,7 +7,6 @@ return {
   },
   config = function()
     require("nvim-treesitter.configs").setup({
-      -- Linguagens que você quer instalar automaticamente
       ensure_installed = {
         "lua",
         "vim",
