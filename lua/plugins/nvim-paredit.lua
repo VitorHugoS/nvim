@@ -7,10 +7,8 @@ return {
   config = function()
     local paredit = require("nvim-paredit")
 
-    -- 1. SETUP DO PAREDIT
-    -- Desative os mapeamentos padrão para evitar conflitos (como >)
     paredit.setup({
-      use_default_keys = false, -- <--- CHAVE PARA O SEU PROBLEMA
+      use_default_keys = false,
       filetypes = { "clojure", "fennel", "scheme", "lisp", "janet" },
       languages = {
         clojure = { whitespace_chars = { " ", "," } },
@@ -42,15 +40,15 @@ return {
       vim.tbl_extend("force", opts, { desc = "Paredit: Raise element" }))
 
     -- 2.3. Wrap
-    vim.keymap.set({ "n", "v" }, "<leader>w(", function()
+    vim.keymap.set({ "n", "v" }, "<leader>e(", function()
       paredit.api.wrap_element_under_cursor("(", ")")
     end, vim.tbl_extend("force", opts, { desc = "Paredit: Wrap with ()" }))
 
-    vim.keymap.set({ "n", "v" }, "<leader>w[", function()
+    vim.keymap.set({ "n", "v" }, "<leader>e[", function()
       paredit.api.wrap_element_under_cursor("[", "]")
     end, vim.tbl_extend("force", opts, { desc = "Paredit: Wrap with []" }))
 
-    vim.keymap.set({ "n", "v" }, "<leader>w{", function()
+    vim.keymap.set({ "n", "v" }, "<leader>e{", function()
       paredit.api.wrap_element_under_cursor("{", "}")
     end, vim.tbl_extend("force", opts, { desc = "Paredit: Wrap with {}" }))
 
