@@ -40,15 +40,15 @@ return {
       vim.tbl_extend("force", opts, { desc = "Paredit: Raise element" }))
 
     -- 2.3. Wrap
-    vim.keymap.set({ "n", "v" }, "<leader>e(", function()
+    vim.keymap.set({ "n", "v" }, "<leader>(", function()
       paredit.api.wrap_element_under_cursor("(", ")")
     end, vim.tbl_extend("force", opts, { desc = "Paredit: Wrap with ()" }))
 
-    vim.keymap.set({ "n", "v" }, "<leader>e[", function()
+    vim.keymap.set({ "n", "v" }, "<leader>[", function()
       paredit.api.wrap_element_under_cursor("[", "]")
     end, vim.tbl_extend("force", opts, { desc = "Paredit: Wrap with []" }))
 
-    vim.keymap.set({ "n", "v" }, "<leader>e{", function()
+    vim.keymap.set({ "n", "v" }, "<leader>{", function()
       paredit.api.wrap_element_under_cursor("{", "}")
     end, vim.tbl_extend("force", opts, { desc = "Paredit: Wrap with {}" }))
 
