@@ -4,7 +4,12 @@ return {
 
   version = '1.*',
   opts = {
-    keymap = { preset = 'default' },
+    keymap = {
+      preset = 'default',
+      ['<CR>'] = { 'accept', 'fallback' },
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
+    },
 
     appearance = {
       nerd_font_variant = 'normal'
@@ -34,7 +39,7 @@ return {
         draw = {
           treesitter = { "lsp" },
           columns = {
-            { "label",     "label_description", gap = 1 },
+            { "label", "label_description", gap = 1 },
             { "kind" }
           },
         },
