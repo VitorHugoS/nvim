@@ -34,6 +34,8 @@ vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
+vim.opt.cursorline = true
+--vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 --vim.g.lsp_no_default_bindings = true
 
 -- Setup lazy.nvim
