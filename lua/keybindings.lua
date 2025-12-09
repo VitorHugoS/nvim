@@ -15,6 +15,8 @@ local function register_fzf()
   vim.keymap.set("n", "<leader>,g", "<cmd>FzfLua live_grep<cr>")
   vim.keymap.set("n", "<leader>gr", "<cmd>FzfLua lsp_references<cr>")
   vim.keymap.set("n", "<leader>,gd", "<cmd>FzfLua lsp_document_diagnostics<cr>")
+  vim.keymap.set("n", "<leader>,gf", "<cmd>FzfLua lgrep_curbuf<cr>")
+
   --vim.keymap.set('n', '<leader>,g', builtin.live_grep, {})
   --vim.keymap.set('n', '<leader>,b', builtin.buffers, {})
   --vim.keymap.set('n', '<leader>,h', builtin.help_tags, {})
@@ -30,7 +32,7 @@ local function register_bash_like_navigation_on_command_prompt()
 end
 
 local function register_system_keybindings()
---  vim.keymap.set('n', '<leader>sr', require('sys').reload_all)
+  --  vim.keymap.set('n', '<leader>sr', require('sys').reload_all)
 end
 
 function keybindings.register()
