@@ -23,6 +23,10 @@ return {
           enabled = false,
         },
       },
+      trigger = {
+        show_on_trigger_character = true,
+        show_on_x_blocked_trigger_characters = { '.' }
+      },
 
       keyword = {
         range = "prefix",
@@ -61,8 +65,8 @@ return {
           enabled = true,
         },
         lsp = {
-          min_keyword_length = 1,
-          score_offset = 100,
+          min_keyword_length = 0,
+          score_offset = 0,
         },
       },
 
