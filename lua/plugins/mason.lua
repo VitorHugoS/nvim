@@ -22,6 +22,7 @@ return {
         pylsp = {},
         eslint = {},
         jdtls = {},
+        markdown_oxide = {},
         clojure_lsp = {
           init_options = {
             ["additional-snippets"] = {},
