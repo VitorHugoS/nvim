@@ -1,2 +1,5 @@
-require("config.lazy")
+require("config.jdtls")
+require("config.autocmds")
+require("config.opts")
 require("keybindings").register()
+require("config.lazy")

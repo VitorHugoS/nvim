@@ -1,13 +1,60 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "mason-org/mason.nvim",
-      "mason-org/mason-lspconfig.nvim",
-    },
+    "mason-org/mason.nvim",
     config = function()
-      -- servers to setup
+      -- setup mason with default properties
+      require("mason").setup()
+    end
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    config = function()
+      local servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = { globals = { "vim" } },
+            },
+          },
+        },
+        ts_ls = {},
+        html = {},
+        jsonls = {},
+        pylsp = {},
+        eslint = {},
+        jdtls = {},
+        markdown_oxide = {},
+        clojure_lsp = {
+          init_options = {
+            ["additional-snippets"] = {},
+            ["document-formatting"] = true,
+            ["document-range-formatting"] = true,
+          },
+        }
+      }
+      require("mason-lspconfig").setup({
+        ensure_installed = vim.tbl_keys(servers),
+      })
+    end
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    config = function()
+      -- ensure the java debug adapter is installed
+      require("mason-nvim-dap").setup({
+        ensure_installed = { "java-debug-adapter", "java-test" }
+      })
+    end
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    }
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
       local servers = {
         lua_ls = {
           settings = {
@@ -32,17 +79,8 @@ return {
         }
       }
 
-      -- mason setup
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = vim.tbl_keys(servers),
-      })
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
-      capabilities.textDocument.completion.completionItem.resolveSupport = {
-        properties = { "documentation", "detail", "additionalTextEdits" }
-      }
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
       for server, opts in pairs(servers) do
         opts.capabilities = capabilities
         vim.lsp.config(server, opts) -- configure the server
