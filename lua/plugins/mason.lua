@@ -68,7 +68,7 @@ return {
         jsonls = {},
         pylsp = {},
         eslint = {},
-        jdtls = {},
+--        jdtls = {},
         markdown_oxide = {},
         clojure_lsp = {
           init_options = {
