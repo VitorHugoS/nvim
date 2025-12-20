@@ -60,10 +60,11 @@ return {
 
       window = {
         completion = {
-          border = "single",
+          winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None",
         },
         documentation = {
-          border = "single",
+          winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder",
+          filetype = "markdown",
         },
       },
 
