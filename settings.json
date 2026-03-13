@@ -1,0 +1,115 @@
+{
+    "calva.evaluationSendCodeToOutputWindow": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vim.leader": ",",
+    "editor.cursorStyle": "block",
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.wrappingIndent": "indent",
+    "editor.rulers": [101],
+    "editor.renderLineHighlight": "all",
+    "editor.cursorSurroundingLines": 8,
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "none",
+    "workbench.layoutControl.enabled": false,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorCustomizations": {
+        "editor.background": "#000000",
+        "editor.foreground": "#cccccc",
+        "sideBar.background": "#000000",
+        "sideBar.border": "#333333",
+        "activityBar.background": "#000000",
+        "activityBar.border": "#333333",
+        "statusBar.background": "#000000",
+        "statusBar.border": "#333333",
+        "editorCursor.foreground": "#00ff00",
+        "editor.lineHighlightBackground": "#1a1a1a",
+        "editor.selectionBackground": "#444444",
+        "editorLineNumber.foreground": "#666666",
+        "editorLineNumber.activeForeground": "#ffff00",
+        "list.activeSelectionBackground": "#333333",
+        "list.hoverBackground": "#222222"
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#80a0ff",
+        "keywords": "#ffff00",
+        "types": "#60ff60",
+        "strings": "#ffa0a0",
+        "functions": "#40ffff",
+        "variables": "#40ffff",
+        "numbers": "#ffa0a0",
+        "textMateRules": [
+            {
+                "scope": [
+                    "keyword",
+                    "storage.type",
+                    "storage.modifier"
+                ],
+                "settings": {
+                    "foreground": "#ffff00"
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.type",
+                    "support.type",
+                    "storage.type.java"
+                ],
+                "settings": {
+                    "foreground": "#60ff60"
+                }
+            },
+            {
+                "scope": [
+                    "variable",
+                    "entity.name.function",
+                    "support.function"
+                ],
+                "settings": {
+                    "foreground": "#40ffff"
+                }
+            },
+            {
+                "scope": [
+                    "constant",
+                    "string",
+                    "constant.numeric"
+                ],
+                "settings": {
+                    "foreground": "#ffa0a0"
+                }
+            },
+            {
+                "scope": [
+                    "keyword.control.directive",
+                    "punctuation.definition.directive",
+                    "meta.preprocessor",
+                    "keyword.other.import.java",
+                    "keyword.other.package.java",
+                    "storage.type.import.java"
+                ],
+                "settings": {
+                    "foreground": "#ff80ff"
+                }
+            },
+            {
+                "scope": [
+                    "constant.character.escape",
+                    "punctuation.section.embedded",
+                    "special"
+                ],
+                "settings": {
+                    "foreground": "#ffa500"
+                }
+            }
+        ]
+    }
+}
