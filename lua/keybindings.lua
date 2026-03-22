@@ -22,6 +22,10 @@ local function register_fzf()
   --vim.keymap.set('n', '<leader>,h', builtin.help_tags, {})
 end
 
+local function register_oil()
+  vim.keymap.set("n", "-", "<cmd>Oil<cr>")
+end
+
 local function register_bash_like_navigation_on_command_prompt()
   vim.api.nvim_set_keymap('c', '<C-A>', '<Home>', { noremap = true })
   vim.api.nvim_set_keymap('c', '<C-E>', '<End>', { noremap = true })
@@ -40,6 +44,7 @@ function keybindings.register()
   register_system_keybindings()
   register_buffer_keybindings()
   register_fzf()
+  register_oil()
   --register_telescope()
   --register_paredit()
   --register_clojure()

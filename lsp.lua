@@ -8,6 +8,7 @@ function lsp.setup()
 
   -- Lua LS
   vim.lsp.config['lua_ls'] = {
+    capabilities = lsp_default_capabilities,
     cmd = { 'lua-language-server' },
     settings = {
       Lua = {

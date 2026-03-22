@@ -146,6 +146,9 @@ local function setup_jdtls()
 	local capabilities = {
 		workspace = {
 			configuration = true,
+			workspaceEdit = {
+				documentChanges = true,
+			},
 		},
 		textDocument = {
 			completion = {
